@@ -1,0 +1,44 @@
+// general button styles
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 10px;
+  @include responsive(mobile){
+    padding: 0.7rem 0.7rem;
+  }
+}
+
+// theme 1 button styles
+
+button {
+  background-color: var(--basicKeyColor);
+  box-shadow: 0 4px 0 var(--basicKeyColorShadow);
+  color: var(--basicButtonText);
+  &:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 var(--basicKeyColorShadow);
+  }
+}
+
+button.secondary-color {
+  background-color: var(--secondaryKeyColor);
+  box-shadow: 0 4px 0 var(--secondaryKeyColorShadow);
+  color: var(--secondaryButtonText);
+  &:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 var(--basicKeyColorShadow);
+  }
+}
+
+button.tertiary-color {
+  background-color: var(--tertiaryKeyColor);
+  box-shadow: 0 4px 0 var(--tertiaryKeyColorShadow);
+  color: var(--tertiaryButtonText);
+  &:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 var(--basicKeyColorShadow);
+  }
+}

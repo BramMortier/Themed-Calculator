@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" data-colormode="theme-1">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  
+  <title>Frontend Mentor | Calculator app</title>
+
+  <!-- stylesheet link -->
+  <link rel="stylesheet" href="./css/index.css">
+
+  <!-- Js link -->
+  <script src="./js/app.js" defer></script>
+
+</head>
+<body>
+
+    <div class="calculator-container">
+
+      <header class="flex">
+        <h2>Calc</h2>
+        <div class="toggle-button-container">
+          <h3>theme</h3>
+          <input type="range" max="2" value="0" name="theme-selector" id="theme-selector-button">
+        </div>
+      </header>
+
+      <div class="display">
+
+      </div>
+
+      <main class="keypad grid">
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button class="tertiary-color">DEL</button>
+
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>+</button>
+
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>-</button>
+
+        <button>.</button>
+        <button>0</button>
+        <button>/</button>
+        <button>x</button>
+
+        <button class="col-span tertiary-color">RESET</button>
+        <button class="col-span secondary-color">=</button>
+      </main>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,291 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
+html[data-colormode="theme-1"] {
+  --calculatorColor: hsl(223, 31%, 20%);
+  --background: hsl(222, 26%, 31%);
+  --keypadColor: hsl(223, 31%, 20%);
+  --ScreenColor: hsl(224, 36%, 15%);
+  --tertiaryKeyColor: hsl(225, 21%, 49%);
+  --tertiaryKeyColorShadow: hsl(224, 28%, 35%);
+  --secondaryKeyColor: hsl(6, 63%, 50%);
+  --secondaryKeyColorShadow: hsl(6, 70%, 34%);
+  --basicKeyColor: hsl(30, 25%, 89%);
+  --basicKeyColorShadow: hsl(28, 16%, 65%);
+  --displayTextColor: white;
+  --basicButtonText: hsl(221, 14%, 31%);
+  --secondaryButtonText: white;
+  --tertiaryButtonText: white;
+  --headerText:white;
+}
+
+html[data-colormode="theme-2"] {
+  --calculatorColor: hsl(0, 5%, 81%);
+  --background: hsl(0, 0%, 90%);
+  --keypadColor: hsl(0, 5%, 81%);
+  --ScreenColor: hsl(0, 0%, 93%);
+  --tertiaryKeyColor: hsl(185, 42%, 37%);
+  --tertiaryKeyColorShadow: hsl(185, 58%, 25%);
+  --secondaryKeyColor: hsl(25, 98%, 40%);
+  --secondaryKeyColorShadow: hsl(25, 99%, 27%);
+  --basicKeyColor: hsl(45, 7%, 89%);
+  --basicKeyColorShadow: hsl(35, 11%, 61%);
+  --displayTextColor: hsl(60, 10%, 19%);
+  --basicButtonText: hsl(60, 10%, 19%);
+  --secondaryButtonText: white;
+  --tertiaryButtonText: white;
+  --headerText:hsl(60, 10%, 19%);
+}
+
+html[data-colormode="theme-3"] {
+  --calculatorColor: hsl(281, 89%, 26%);
+  --background: hsl(268, 75%, 9%);
+  --keypadColor: hsl(268, 71%, 12%);
+  --ScreenColor: hsl(268, 71%, 12%);
+  --tertiaryKeyColor: hsl(281, 89%, 26%);
+  --tertiaryKeyColorShadow: hsl(285, 91%, 52%);
+  --secondaryKeyColor: hsl(176, 100%, 44%);
+  --secondaryKeyColorShadow: hsl(177, 92%, 70%);
+  --basicKeyColor: hsl(268, 47%, 21%);
+  --basicKeyColorShadow: hsl(290, 70%, 36%);
+  --displayTextColor:hsl(52, 100%, 62%);
+  --basicButtonText:hsl(52, 100%, 62%);
+  --secondaryButtonText: hsl(198, 20%, 13%);
+  --tertiaryButtonText: white;
+  --headerText: hsl(52, 100%, 62%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 100%;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.col-span {
+  grid-column: span var(--amount, 2);
+}
+
+.row-span {
+  grid-row: span var(--amount, 2);
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+}
+
+button {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+@media only screen and (max-width: 700px) {
+  button {
+    font-size: 1.5rem;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--headerText);
+}
+
+h3 {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: var(--headerText);
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 1rem;
+  min-height: 100vh;
+  background-color: var(--background);
+}
+
+.calculator-container {
+  padding: 2rem;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 12px 0 var(--calculatorColor);
+          box-shadow: 0 12px 0 var(--calculatorColor);
+  border: 5px solid var(--calculatorColor);
+}
+
+@media only screen and (max-width: 700px) {
+  .calculator-container {
+    padding: 1rem;
+  }
+}
+
+.calculator-container header {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2rem;
+}
+
+.calculator-container header .toggle-button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+.calculator-container header .toggle-button-container input {
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 30px;
+  width: 80px;
+  padding: 0 6px;
+  border-radius: 30px;
+  background-color: var(--keypadColor);
+}
+
+.calculator-container header .toggle-button-container input::-webkit-slider-thumb {
+  background: var(--secondaryKeyColor);
+  -webkit-appearance: none;
+          appearance: none;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+}
+
+@media only screen and (max-width: 700px) {
+  .calculator-container header .toggle-button-container input {
+    height: 25px;
+    width: 70px;
+  }
+  .calculator-container header .toggle-button-container input::-webkit-slider-thumb {
+    height: 15px;
+    width: 15px;
+  }
+}
+
+.calculator-container .display {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 130px;
+  padding-right: 2rem;
+  font-size: 3rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  background-color: var(--ScreenColor);
+  color: var(--displayTextColor);
+}
+
+@media only screen and (max-width: 700px) {
+  .calculator-container .display {
+    min-height: 90px;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+  }
+}
+
+.calculator-container .keypad {
+  --gap: 2rem;
+  padding: 2rem;
+  border-radius: 15px;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  background-color: var(--keypadColor);
+}
+
+@media only screen and (max-width: 700px) {
+  .calculator-container .keypad {
+    --gap: 0.5rem;
+    padding: 1.5rem;
+  }
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 700px) {
+  button {
+    padding: 0.7rem 0.7rem;
+  }
+}
+
+button {
+  background-color: var(--basicKeyColor);
+  -webkit-box-shadow: 0 4px 0 var(--basicKeyColorShadow);
+          box-shadow: 0 4px 0 var(--basicKeyColorShadow);
+  color: var(--basicButtonText);
+}
+
+button:active {
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+  -webkit-box-shadow: 0 0 0 var(--basicKeyColorShadow);
+          box-shadow: 0 0 0 var(--basicKeyColorShadow);
+}
+
+button.secondary-color {
+  background-color: var(--secondaryKeyColor);
+  -webkit-box-shadow: 0 4px 0 var(--secondaryKeyColorShadow);
+          box-shadow: 0 4px 0 var(--secondaryKeyColorShadow);
+  color: var(--secondaryButtonText);
+}
+
+button.secondary-color:active {
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+  -webkit-box-shadow: 0 0 0 var(--basicKeyColorShadow);
+          box-shadow: 0 0 0 var(--basicKeyColorShadow);
+}
+
+button.tertiary-color {
+  background-color: var(--tertiaryKeyColor);
+  -webkit-box-shadow: 0 4px 0 var(--tertiaryKeyColorShadow);
+          box-shadow: 0 4px 0 var(--tertiaryKeyColorShadow);
+  color: var(--tertiaryButtonText);
+}
+
+button.tertiary-color:active {
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+  -webkit-box-shadow: 0 0 0 var(--basicKeyColorShadow);
+          box-shadow: 0 0 0 var(--basicKeyColorShadow);
+}
+/*# sourceMappingURL=index.css.map */
